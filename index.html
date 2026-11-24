@@ -4,46 +4,24 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Josiane Trevisol Leal</title>
+<meta name="description" content="Josiane Trevisol Leal, Postdoctoral Fellow, Cardona Lab, Department of Microbiology, University of Manitoba. Profiles, contact and news.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Public+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
 <style>
-/* Layout: one narrow left-aligned column, name block on top, a stacked list of full-width link rows below. */
+/* Layout: single dark-violet world. Name block, a stack of wide pill buttons, a light email pill, then a dated news list. */
 :root {
-  --bg: #f3f6f6;
-  --surface: #ffffff;
-  --ink: #14232a;
-  --muted: #586a70;
-  --line: #d9e2e3;
-  --accent: #0f5e63;
-  --accent-soft: #e1eeee;
-  --font-display: "Instrument Serif", "Iowan Old Style", Georgia, serif;
+  --bg: #26215c;
+  --pill: #3c3489;
+  --pill-hover: #534ab7;
+  --ink: #eeedfe;
+  --soft: #cecbf6;
+  --muted: #afa9ec;
+  --line: #3c3489;
+  --light: #eeedfe;
   --font-body: "Public Sans", "Segoe UI", system-ui, -apple-system, sans-serif;
-  color-scheme: light;
-}
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --bg: #0d1517;
-    --surface: #152124;
-    --ink: #e6eeef;
-    --muted: #96a8ad;
-    --line: #26363a;
-    --accent: #6cc4c1;
-    --accent-soft: #1b3235;
-    color-scheme: dark;
-  }
-}
-:root[data-theme="dark"] {
-  --bg: #0d1517;
-  --surface: #152124;
-  --ink: #e6eeef;
-  --muted: #96a8ad;
-  --line: #26363a;
-  --accent: #6cc4c1;
-  --accent-soft: #1b3235;
   color-scheme: dark;
 }
-
 * { box-sizing: border-box; }
 html, body { margin: 0; }
 body {
@@ -55,101 +33,115 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 main {
-  max-width: 460px;
+  max-width: 480px;
   margin: 0 auto;
   padding: 48px 20px 40px;
   display: grid;
   gap: 32px;
 }
+a { color: inherit; }
+svg { flex: none; }
 
 /* Header */
-header { display: grid; gap: 16px; }
-.mono {
-  width: 56px; height: 56px;
-  border-radius: 50%;
-  display: grid; place-items: center;
-  background: var(--accent);
-  color: var(--bg);
-  font-family: var(--font-display);
-  font-size: 24px;
-  letter-spacing: 0.02em;
-}
+header { display: grid; gap: 8px; }
+.eyebrow { margin: 0; font-size: 13px; color: var(--muted); letter-spacing: 0.03em; }
 h1 {
   margin: 0;
-  font-family: var(--font-display);
-  font-weight: 400;
-  font-size: 40px;
-  line-height: 1.05;
-  letter-spacing: -0.01em;
+  font-size: 34px;
+  line-height: 1.1;
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  color: #ffffff;
   text-wrap: balance;
 }
-.role { margin: 0; color: var(--muted); font-size: 15px; }
-.role strong { color: var(--ink); font-weight: 600; }
+.role { margin: 0; font-size: 15px; color: var(--soft); }
 
-/* Link list */
-nav { display: grid; gap: 10px; }
-.row {
-  display: grid;
-  grid-template-columns: 40px 1fr auto;
+/* Section labels */
+h2 {
+  margin: 0 0 12px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--muted);
+  letter-spacing: 0.04em;
+}
+
+/* Pill buttons */
+.pills { display: grid; gap: 10px; }
+.pill {
+  display: flex;
   align-items: center;
   gap: 14px;
-  padding: 14px 16px;
-  background: var(--surface);
-  border: 1px solid var(--line);
-  border-radius: 12px;
-  color: inherit;
+  min-height: 54px;
+  padding: 10px 20px;
+  border-radius: 999px;
+  background: var(--pill);
   text-decoration: none;
-  transition: border-color .15s ease, transform .15s ease;
+  transition: background .15s ease, transform .15s ease;
 }
-a.row:hover { border-color: var(--accent); }
-a.row:active { transform: scale(0.99); }
-a.row:focus-visible, button:focus-visible, .email-addr:focus-visible {
-  outline: 2px solid var(--accent);
-  outline-offset: 2px;
-}
-.icon {
-  width: 40px; height: 40px;
-  border-radius: 10px;
-  display: grid; place-items: center;
-  background: var(--accent-soft);
-  color: var(--accent);
-}
-.icon svg { width: 20px; height: 20px; }
-.text { min-width: 0; display: grid; gap: 1px; }
-.label { font-weight: 600; font-size: 16px; }
-.sub {
-  color: var(--muted);
-  font-size: 13.5px;
-  overflow-wrap: anywhere;
-}
-.mono-num { font-variant-numeric: tabular-nums; letter-spacing: 0.01em; }
-.chev { color: var(--muted); width: 18px; height: 18px; }
+a.pill:hover { background: var(--pill-hover); }
+a.pill:active { transform: scale(0.99); }
+.pill svg.ic { width: 20px; height: 20px; color: var(--soft); }
+.pill .txt { flex: 1; min-width: 0; display: grid; }
+.pill .lbl { font-weight: 600; font-size: 15.5px; }
+.pill .sub { font-size: 12.5px; color: var(--muted); overflow-wrap: anywhere; }
+.pill .num { font-variant-numeric: tabular-nums; letter-spacing: 0.02em; }
+.pill svg.go { width: 16px; height: 16px; color: var(--muted); }
 
-/* Email row: link plus a copy button */
-.email-row { grid-template-columns: 40px 1fr auto; }
-.email-addr { color: inherit; text-decoration: none; }
-.email-addr:hover .label { color: var(--accent); }
-button.copy {
+/* Email pill */
+.mail {
+  background: var(--light);
+  color: var(--bg);
+}
+.mail svg.ic { color: var(--bg); }
+.mail a { text-decoration: none; flex: 1; min-width: 0; font-size: 14px; font-weight: 600; overflow-wrap: anywhere; }
+.mail button {
   font: inherit;
   font-size: 13px;
   font-weight: 600;
-  color: var(--accent);
-  background: transparent;
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  padding: 6px 10px;
+  color: var(--ink);
+  background: var(--bg);
+  border: 0;
+  border-radius: 999px;
+  padding: 7px 14px;
   cursor: pointer;
   white-space: nowrap;
 }
-button.copy:hover { border-color: var(--accent); }
+.mail button:hover { background: var(--pill); }
 
-footer {
-  color: var(--muted);
-  font-size: 13px;
-  border-top: 1px solid var(--line);
-  padding-top: 16px;
+/* News list */
+.news { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
+.news li { border-bottom: 1px solid var(--line); }
+.news a {
+  display: grid;
+  grid-template-columns: 74px 1fr 16px;
+  gap: 12px;
+  align-items: start;
+  padding: 14px 4px;
+  text-decoration: none;
+  border-radius: 8px;
 }
+.news a:hover .t { text-decoration: underline; text-underline-offset: 3px; }
+.news .d { font-size: 13px; color: var(--muted); font-variant-numeric: tabular-nums; padding-top: 2px; }
+.news .t { font-size: 15px; font-weight: 500; line-height: 1.4; }
+.news .s { display: block; margin-top: 3px; font-size: 12.5px; color: var(--muted); font-weight: 400; }
+.news .s .lang {
+  display: inline-block;
+  margin-left: 6px;
+  padding: 0 7px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  font-size: 11.5px;
+}
+.news svg { width: 16px; height: 16px; color: var(--muted); margin-top: 4px; }
 
+footer { font-size: 13px; color: var(--muted); }
+
+a:focus-visible, button:focus-visible { outline: 2px solid var(--soft); outline-offset: 3px; }
+
+@media (max-width: 380px) {
+  h1 { font-size: 30px; }
+  .news a { grid-template-columns: 62px 1fr 16px; }
+}
 @media (prefers-reduced-motion: reduce) {
   * { transition: none !important; }
 }
@@ -158,78 +150,79 @@ footer {
 <body>
 <main>
   <header>
-    <div class="mono" aria-hidden="true">JTL</div>
+    <p class="eyebrow">Microbiology · University of Manitoba</p>
     <h1>Josiane Trevisol Leal</h1>
-    <p class="role"><strong>Postdoctoral Fellow</strong>, Cardona Lab<br>Department of Microbiology, University of Manitoba</p>
+    <p class="role">Postdoctoral Fellow, Cardona Lab</p>
   </header>
 
-  <nav aria-label="Profiles and contact">
-    <a class="row" href="https://www.linkedin.com/in/josianetrevisol/" target="_blank" rel="noopener">
-      <span class="icon" aria-hidden="true">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2"/><path d="M3 12h18"/></svg>
-      </span>
-      <span class="text">
-        <span class="label">LinkedIn</span>
-        <span class="sub">in/josianetrevisol</span>
-      </span>
-      <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg>
-    </a>
-
-    <a class="row" href="https://orcid.org/0000-0002-8685-3199" target="_blank" rel="noopener">
-      <span class="icon" aria-hidden="true">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2.2"/><path d="M5.8 16c.6-1.6 1.8-2.4 3.2-2.4s2.6.8 3.2 2.4"/><path d="M15 10h3"/><path d="M15 13.5h3"/></svg>
-      </span>
-      <span class="text">
-        <span class="label">ORCID</span>
-        <span class="sub mono-num">0000-0002-8685-3199</span>
-      </span>
-      <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg>
-    </a>
-
-    <a class="row" href="https://scholar.google.com/citations?user=V_xrBlIAAAAJ" target="_blank" rel="noopener">
-      <span class="icon" aria-hidden="true">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 9.5 12 4l10 5.5-10 5.5z"/><path d="M6 11.7V16c0 1.4 2.7 3 6 3s6-1.6 6-3v-4.3"/><path d="M22 9.5V15"/></svg>
-      </span>
-      <span class="text">
-        <span class="label">Google Scholar</span>
-        <span class="sub">Publications and citations</span>
-      </span>
-      <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg>
-    </a>
-
-    <a class="row" href="https://cardonalab.org/2026/08/11/dr-josiane-trevisol-leal-joins-ai-klebsiella-drug-discovery-project/" target="_blank" rel="noopener">
-      <span class="icon" aria-hidden="true">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6"/><path d="M10 3v6.2L4.6 18.4A1.7 1.7 0 0 0 6 21h12a1.7 1.7 0 0 0 1.4-2.6L14 9.2V3"/><path d="M7.2 15h9.6"/></svg>
-      </span>
-      <span class="text">
-        <span class="label">Cardona Lab</span>
-        <span class="sub">Lab announcement</span>
-      </span>
-      <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg>
-    </a>
-
-    <a class="row" href="https://gcgh.grandchallenges.org/grant/translational-approach-ai-klebsiella-drug-discovery" target="_blank" rel="noopener">
-      <span class="icon" aria-hidden="true">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/><path d="M9 13h6"/><path d="M9 17h4"/></svg>
-      </span>
-      <span class="text">
-        <span class="label">Grand Challenges grant</span>
-        <span class="sub">Translational Approach with AI for <i>Klebsiella</i> Drug Discovery</span>
-      </span>
-      <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg>
-    </a>
-
-    <div class="row email-row">
-      <span class="icon" aria-hidden="true">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 6.5 8.5 6.5 8.5-6.5"/></svg>
-      </span>
-      <a class="text email-addr" href="mailto:josiane.trevisolleal@umanitoba.ca">
-        <span class="label">Email</span>
-        <span class="sub" id="email-text">josiane.trevisolleal@<wbr>umanitoba.ca</span>
+  <section aria-labelledby="h-links">
+    <h2 id="h-links">Profiles and contact</h2>
+    <div class="pills">
+      <a class="pill" href="https://www.linkedin.com/in/josianetrevisol/" target="_blank" rel="noopener">
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2"/><path d="M3 12h18"/></svg>
+        <span class="txt"><span class="lbl">LinkedIn</span></span>
+        <svg class="go" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg>
       </a>
-      <button class="copy" id="copy-email" type="button">Copy</button>
+
+      <a class="pill" href="https://orcid.org/0000-0002-8685-3199" target="_blank" rel="noopener">
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2.2"/><path d="M5.8 16c.6-1.6 1.8-2.4 3.2-2.4s2.6.8 3.2 2.4"/><path d="M15 10h3"/><path d="M15 13.5h3"/></svg>
+        <span class="txt"><span class="lbl">ORCID</span><span class="sub num">0000-0002-8685-3199</span></span>
+        <svg class="go" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg>
+      </a>
+
+      <a class="pill" href="https://scholar.google.com/citations?user=V_xrBlIAAAAJ" target="_blank" rel="noopener">
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9.5 12 4l10 5.5-10 5.5z"/><path d="M6 11.7V16c0 1.4 2.7 3 6 3s6-1.6 6-3v-4.3"/><path d="M22 9.5V15"/></svg>
+        <span class="txt"><span class="lbl">Google Scholar</span></span>
+        <svg class="go" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg>
+      </a>
+
+      <a class="pill" href="https://gcgh.grandchallenges.org/grant/translational-approach-ai-klebsiella-drug-discovery" target="_blank" rel="noopener">
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 3h6"/><path d="M10 3v6.2L4.6 18.4A1.7 1.7 0 0 0 6 21h12a1.7 1.7 0 0 0 1.4-2.6L14 9.2V3"/><path d="M7.2 15h9.6"/></svg>
+        <span class="txt"><span class="lbl">Current project</span><span class="sub">Translational Approach with AI for <i>Klebsiella</i> Drug Discovery</span></span>
+        <svg class="go" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg>
+      </a>
+
+      <div class="pill mail">
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 6.5 8.5 6.5 8.5-6.5"/></svg>
+        <a href="mailto:josiane.trevisolleal@umanitoba.ca" id="email-text">josiane.trevisolleal@<wbr>umanitoba.ca</a>
+        <button type="button" id="copy-email">Copy</button>
+      </div>
     </div>
-  </nav>
+  </section>
+
+  <section aria-labelledby="h-news">
+    <h2 id="h-news">In the news</h2>
+    <ul class="news">
+      <li>
+        <a href="https://cardonalab.org/2026/08/11/dr-josiane-trevisol-leal-joins-ai-klebsiella-drug-discovery-project/" target="_blank" rel="noopener">
+          <span class="d">Aug 2026</span>
+          <span class="t">Joins the AI <i>Klebsiella</i> Drug Discovery Project<span class="s">Cardona Lab, University of Manitoba</span></span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg>
+        </a>
+      </li>
+      <li>
+        <a href="https://profissaobiotec.com.br/premio-jovem-pesquisador-promega-como-conquistar-uma-viagem-com-seu-projeto-de-pesquisa/" target="_blank" rel="noopener">
+          <span class="d">Aug 2022</span>
+          <span class="t">Interview with the first winner of the Promega Young Researcher Award<span class="s">Profissão Biotec<span class="lang">Portuguese</span></span></span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg>
+        </a>
+      </li>
+      <li>
+        <a href="https://www.promegaconnections.com/promega-highlights-innovative-work-with-brazil-young-researcher-award/" target="_blank" rel="noopener">
+          <span class="d">Jul 2022</span>
+          <span class="t">Promega highlights innovative work with Brazil Young Researcher Award<span class="s">Promega Connections</span></span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg>
+        </a>
+      </li>
+      <li>
+        <a href="https://blog.ulbra.br/egressa-de-biomedicina-da-ulbra-conquista-1-lugar-no-premio-jovem-pesquisador-2021/" target="_blank" rel="noopener">
+          <span class="d">Jul 2021</span>
+          <span class="t">Ulbra Biomedicine graduate wins first place in the Young Researcher Award<span class="s">Blog da Ulbra<span class="lang">Portuguese</span></span></span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg>
+        </a>
+      </li>
+    </ul>
+  </section>
 
   <footer>Winnipeg, Manitoba, Canada</footer>
 </main>
